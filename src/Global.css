@@ -1,0 +1,21 @@
+/* letras general */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+/* solo titulos */
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+/* font-family: 'Prompt', sans-serif; */
+
+:root {
+	--orange: #ff9234;
+	--yellow: #ffcd3c;
+	--green: #35d0ba;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	scroll-behavior: smooth;
+}
