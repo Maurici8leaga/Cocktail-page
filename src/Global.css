@@ -5,12 +5,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
 /* font-family: 'Prompt', sans-serif; */
 
-:root {
-	--orange: #ff9234;
-	--yellow: #ffcd3c;
-	--green: #35d0ba;
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -18,4 +12,14 @@
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
 	scroll-behavior: smooth;
+}
+
+:root {
+	--orange: #ff9233;
+	--yellow: #ffcd3c;
+	--green: #35d0ba;
+	/* opcional */
+	--verde: #6aaa04;
+	--pastel: #e7de68;
+	--naraja: #fc7207;
 }

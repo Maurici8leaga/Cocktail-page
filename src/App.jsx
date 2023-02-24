@@ -1,17 +1,27 @@
-import "./Global.css";
+import { useState } from "react";
+import Navbar from "./components/Navbar/Navbar";
+import SearchBar from "./components/SearchBar/SearchBar";
+import s from "./style.module.css";
 
 const App = () => {
 	return (
-		<div>
-			<h1>ESTE ES UN H1</h1>
+		<div className={s.container_main}>
+			{/* <div className=""> */}
+			<div className={s.bg_intro}>
+				<Navbar />
+				<main className="container text-center">
+					<header className={s.header}>
+						<h1 className={s.title}>Cocktail Pedia</h1>
 
-			<h2>Este es un h2</h2>
-
-			<p>
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem debitis
-				libero quis itaque id? Non iusto sed veritatis vel a omnis amet tempora
-				similique cum repudiandae, optio doloribus. Quam, tenetur.
-			</p>
+						<p className="h4">
+							Welcome to Cocktail Pedia, where you can find the recipe for your
+							favorite cocktail and more
+						</p>
+					</header>
+					<SearchBar />
+				</main>
+			</div>
+			{/* </div> */}
 		</div>
 	);
 };
