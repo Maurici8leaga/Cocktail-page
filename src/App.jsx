@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import SearchBar from "./components/SearchBar/SearchBar";
+import Menu from "./components/Menu/Menu";
 import s from "./style.module.css";
 
 const App = () => {
@@ -20,68 +21,82 @@ const App = () => {
 				</main>
 			</div>
 			<section className={s.section}>
-				<div className={s.prueba}>
+				<Menu />
+				{/* <div className={s.prueba}>
 					<div className={s.imgPrueba}>
-						<p className={s.subtitle_right}>Cocktail</p>
+						<a className={s.subtitle_left}>Cocktail</a>
 					</div>
-				</div>
+				</div> */}
 
-				<div className={s.container_card}>
-					{/* <div className="row row-cols-1 row-cols-md-3 g-0 text-center">
-						<div className="col">
-							<div className="card" style={{ width: 150 }}>
-								<img
-									src="https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600"
-									className="card-img-top"
-									alt="..."
-								/>
+				{/* <div className="container-fluid py-5">
+					<div className="row justify-content-center">
+						<div className="col col-sm-auto col-md-auto">
+							<div
+								className="card"
+								style={{
+									borderColor: "transparent",
+									borderRadius: 0,
+									margin: 25,
+								}}
+							>
+								<figure className={s.marco}>
+									<img
+										src="https://www.thecocktaildb.com/images/media/drink/usuvvr1472719118.jpg"
+										className="card-img-top"
+										alt="..."
+									/>
+								</figure>
+								<div className="card-body text-center">
+									<h5 className="card-title">Card title</h5>
+								</div>
+							</div>
+						</div>
+
+						<div className="col col-sm-auto col-md-auto">
+							<div
+								className="card"
+								style={{
+									borderColor: "transparent",
+									borderRadius: 0,
+									margin: 25,
+								}}
+							>
+								<figure className={s.marco}>
+									<img
+										src="https://www.thecocktaildb.com/images/media/drink/qxrvqw1472718959.jpg"
+										className="card-img-top"
+										alt="..."
+									/>
+								</figure>
 								<div className="card-body">
 									<h5 className="card-title">Card title</h5>
 								</div>
 							</div>
 						</div>
 
-						<div className="col">
-							<div className="card" style={{ width: 150 }}>
-								<img
-									src="https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600"
-									className="card-img-top"
-									alt="..."
-								/>
-								<div className="card-body">
-									<h5 className="card-title">Card title</h5>
-								</div>
-							</div>
-						</div>
-
-						<div className="col">
-							<div className="card" style={{ width: 150 }}>
-								<img
-									src="https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600"
-									className="card-img-top"
-									alt="..."
-								/>
+						<div className="col col-sm-auto col-md-auto">
+							<div
+								className="card"
+								style={{
+									borderColor: "transparent",
+									borderRadius: 0,
+									margin: 25,
+								}}
+							>
+								<figure className={s.marco}>
+									<img
+										src="https://www.thecocktaildb.com/images/media/drink/uyrvut1479473214.jpg"
+										className="card-img-top"
+										alt="..."
+									/>
+								</figure>
 								<div className="card-body">
 									<h5 className="card-title">Card title</h5>
 								</div>
 							</div>
 						</div>
 					</div>
-					</div> */}
-
-					<div className="card-group">
-						<div className="card" style={{ width: 50 }}>
-							<img
-								src="https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600https://images.pexels.com/photos/1590151/pexels-photo-1590151.jpeg?auto=compress&cs=tinysrgb&w=1600"
-								className="card-img-top"
-								alt="..."
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card title</h5>
-							</div>
-						</div>
-					</div>
-				</div>
+				</div> */}
 			</section>
 
 			<footer></footer>
