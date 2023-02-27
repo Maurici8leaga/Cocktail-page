@@ -23,8 +23,79 @@ const App = () => {
 			<section className={s.section}>
 				<Menu />
 				{/* <div className={s.prueba}>
-					<div className={s.imgPrueba}>
-						<a className={s.subtitle_left}>Cocktail</a>
+					<div>
+						<div className={s.imgPrueba}>
+							<a className={s.subtitle_left}>Cocktail</a>
+						</div>
+						<div className="container-fluid py-5">
+							<div className="row justify-content-center">
+								<div className="col col-sm-auto col-md-auto">
+									<div
+										className="card"
+										style={{
+											borderColor: "transparent",
+											borderRadius: 0,
+											margin: 25,
+										}}
+									>
+										<figure className={s.marco}>
+											<img
+												src="https://www.thecocktaildb.com/images/media/drink/usuvvr1472719118.jpg"
+												className="card-img-top"
+												alt="..."
+											/>
+										</figure>
+										<div className="card-body text-center">
+											<h5 className="card-title">Card title</h5>
+										</div>
+									</div>
+								</div>
+
+								<div className="col col-sm-auto col-md-auto">
+									<div
+										className="card"
+										style={{
+											borderColor: "transparent",
+											borderRadius: 0,
+											margin: 25,
+										}}
+									>
+										<figure className={s.marco}>
+											<img
+												src="https://www.thecocktaildb.com/images/media/drink/qxrvqw1472718959.jpg"
+												className="card-img-top"
+												alt="..."
+											/>
+										</figure>
+										<div className="card-body">
+											<h5 className="card-title">Card title</h5>
+										</div>
+									</div>
+								</div>
+
+								<div className="col col-sm-auto col-md-auto">
+									<div
+										className="card"
+										style={{
+											borderColor: "transparent",
+											borderRadius: 0,
+											margin: 25,
+										}}
+									>
+										<figure className={s.marco}>
+											<img
+												src="https://www.thecocktaildb.com/images/media/drink/uyrvut1479473214.jpg"
+												className="card-img-top"
+												alt="..."
+											/>
+										</figure>
+										<div className="card-body">
+											<h5 className="card-title">Card title</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div> */}
 

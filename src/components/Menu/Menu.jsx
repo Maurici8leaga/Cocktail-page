@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import Card from "../Card/Card";
 import { CocktailApi } from "../../Api/endpoint";
 import s from "./style.module.css";
-import img from "../../assets/images/cocktails.webp";
 
 const Menu = () => {
 	const [drikCategory, setDrinkCategory] = useState([]);
@@ -21,28 +21,32 @@ const Menu = () => {
 		<div>
 			<div className={s.container_menu}>
 				{drikCategory.map((drink, i) => {
+					const { strCategory, img } = drink;
 					const oddOrEven = i % 2;
 					return (
-						<div
-							className={s.img_bg}
-							key={`item_menu_${i}`}
-							style={{
-								backgroundImage: `url(${
-									process.env.PUBLIC_URL + "/img/cocktails.webp"
-								})`,
-							}}
-						>
-							<a
-								className={s.subtitle_menu}
-								href="/"
+						<div key={`item_menu_${i}`}>
+							<div
+								className={s.img_bg}
 								style={{
-									justifyContent: oddOrEven === 0 ? "flex-start" : "flex-end",
-									paddingLeft: oddOrEven === 0 ? 30 : 0,
-									paddingRight: oddOrEven === 0 ? 0 : 30,
+									backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${
+										process.env.PUBLIC_URL + `/img/${img}`
+									})`,
 								}}
 							>
-								{`${drink.strCategory}`}
-							</a>
+								<a
+									className={s.subtitle_menu}
+									href="/"
+									style={{
+										justifyContent: oddOrEven === 0 ? "flex-start" : "flex-end",
+										paddingLeft: oddOrEven === 0 ? 30 : 0,
+										paddingRight: oddOrEven === 0 ? 0 : 30,
+									}}
+								>
+									{`${strCategory}`}
+								</a>
+							</div>
+
+							<Card nameCategory={strCategory} />
 						</div>
 					);
 				})}
