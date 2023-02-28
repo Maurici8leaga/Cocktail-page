@@ -1,22 +1,7 @@
-import { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import { CocktailApi } from "../../Api/endpoint";
 import s from "./style.module.css";
 
-const Menu = () => {
-	const [drikCategory, setDrinkCategory] = useState([]);
-
-	async function getListCategory() {
-		const data = await CocktailApi.getListCategory();
-		if (data.length > 0) {
-			setDrinkCategory(data);
-		}
-	}
-
-	useEffect(() => {
-		getListCategory();
-	}, []);
-
+const Menu = ({ drikCategory }) => {
 	return (
 		<div>
 			<div className={s.container_menu}>

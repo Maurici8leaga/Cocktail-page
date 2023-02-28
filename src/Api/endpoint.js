@@ -37,4 +37,13 @@ export class CocktailApi {
 			console.error(error);
 		}
 	}
+
+	static async getDrinkByName(name) {
+		try {
+			const response = await axios.get(`${BASE_URL}search.php?s=${name}`);
+			console.log(response.data.drinks);
+		} catch (error) {
+			console.error(error);
+		}
+	}
 }
