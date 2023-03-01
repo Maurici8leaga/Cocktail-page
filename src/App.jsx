@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Menu from "./components/Menu/Menu";
+import Grid from "./components/Grid/Grid";
 import { CocktailApi } from "./Api/endpoint";
 import s from "./style.module.css";
 
@@ -48,13 +49,17 @@ const App = () => {
 					</header>
 				</main>
 			</div>
-			{drikCategory.length > 0 ? (
-				<section className={s.section}>
+			{/* {drikCategory.length > 0 || drinkName.length > 0 ? ( */}
+			<section className={s.section}>
+				{drinkName.length > 0 ? (
+					<Grid drinkName={drinkName} />
+				) : (
 					<Menu drikCategory={drikCategory} />
-				</section>
-			) : (
+				)}
+			</section>
+			{/* ) : (
 				<div>Loadig ....</div>
-			)}
+			)} */}
 
 			<footer></footer>
 		</div>

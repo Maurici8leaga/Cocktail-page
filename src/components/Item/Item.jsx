@@ -1,7 +1,7 @@
 import s from "./style.module.css";
 
 const Item = ({ name, img }) => (
-	<div className="col col-sm-auto col-md-auto">
+	<div>
 		<div
 			className="card"
 			style={{

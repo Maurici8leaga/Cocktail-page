@@ -21,10 +21,7 @@ const Card = ({ nameCategory }) => {
 
 	return drinkName.length > 0 ? (
 		<div className="container-fluid py-5">
-			<div
-				className="row justify-content-center"
-				style={{ overflowX: "scroll" }}
-			>
+			<div className="d-flex flex-row" style={{ overflowX: "scroll" }}>
 				{drinkName.map((drink) => {
 					const { idDrink, strDrink, strDrinkThumb } = drink;
 					return <Item key={idDrink} name={strDrink} img={strDrinkThumb} />;
