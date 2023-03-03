@@ -7,15 +7,25 @@ const GridItem = ({ name, img }) => {
 				className="card"
 				style={{
 					borderColor: "transparent",
-					borderRadius: 0,
+					// borderRadius: 0,
 					margin: 25,
+					borderRadius: 6,
+					background: "#ffffff",
+					boxShadow: "5px 5px 10px #ebebeb, -5px -5px 10px #ffffff",
 				}}
 			>
-				<figure className={s.container_img}>
-					<img src={img} className="card-img-top" alt={`${name} img`} />
-				</figure>
-				<div className="card-body text-center">
-					<h5 className="card-title">{name}</h5>
+				<div className={s.container_card}>
+					<figure className={s.container_img}>
+						<img src={img} className="card-img-top" alt={`${name} img`} />
+					</figure>
+
+					<div className={s.overlay}>
+						<div className={s.text_overlay}>Ver mas...</div>
+					</div>
+
+					<div className="card-body text-center">
+						<h6 className="card-title">{name}</h6>
+					</div>
 				</div>
 			</div>
 		</div>
