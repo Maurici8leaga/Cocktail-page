@@ -20,7 +20,7 @@ const GridItem = ({ name, img }) => {
 					</figure>
 
 					<div className={s.overlay}>
-						<div className={s.text_overlay}>Ver mas...</div>
+						<div className={s.text_overlay}>Read more ...</div>
 					</div>
 
 					<div className="card-body text-center">

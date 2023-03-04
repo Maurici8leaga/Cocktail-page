@@ -13,6 +13,13 @@ const App = () => {
 	// state for drink name
 	const [drinkName, setDrinkName] = useState("");
 
+	// const [visible, setVisible] = useState({
+	// https://www.geeksforgeeks.org/how-to-use-multiple-ternary-operators-in-a-single-statement-in-javascript/
+	// 	menu: true,
+	// 	grid: false,
+	// 	drink: false
+	// });
+
 	// function to get list of drink by category
 	async function getListCategory() {
 		const data = await CocktailApi.getListCategory();
@@ -27,6 +34,8 @@ const App = () => {
 		const data = await CocktailApi.getDrinkByName(name);
 		if (data) {
 			setDrinkName(data);
+		} else {
+			setDrinkName([]);
 		}
 	}
 
@@ -45,13 +54,14 @@ const App = () => {
 							favorite cocktail and more
 						</p>
 
-						<SearchBar onSubmit={searchDrink} />
+						<SearchBar onSubmit={searchDrink} id="searchBar" />
 					</header>
 				</main>
 			</div>
 			{/* {drikCategory.length > 0 || drinkName.length > 0 ? ( */}
-			<section className={s.section}>
-				{drinkName.length > 0 ? (
+			<section className={s.section} id="menu">
+				{drinkName ? (
+					// {drinkName.length > 0 ? (
 					<Grid drinkName={drinkName} />
 				) : (
 					<Menu drikCategory={drikCategory} />

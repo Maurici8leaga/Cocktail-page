@@ -9,6 +9,8 @@ const SearchBar = ({ onSubmit }) => {
 			onSubmit(e.target.value);
 			// clean the input
 			e.target.value = "";
+			// redirect to the section
+			window.location.href = "#menu";
 		}
 	};
 
