@@ -1,13 +1,18 @@
 import s from "./style.module.css";
 
-const GridItem = ({ name, img }) => {
+const GridItem = (props) => {
+	const { name, img, id, getDrinkById } = props;
+
+	const selectDrink = () => {
+		getDrinkById(id);
+	};
+
 	return (
 		<div className="col col-sm-auto col-md-auto">
 			<div
 				className="card"
 				style={{
 					borderColor: "transparent",
-					// borderRadius: 0,
 					margin: 25,
 					borderRadius: 6,
 					background: "#ffffff",
@@ -15,7 +20,7 @@ const GridItem = ({ name, img }) => {
 				}}
 			>
 				<div className={s.container_card}>
-					<figure className={s.container_img}>
+					<figure className={s.container_img} onClick={selectDrink}>
 						<img src={img} className="card-img-top" alt={`${name} img`} />
 					</figure>
 

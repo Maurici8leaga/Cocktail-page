@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Menu from "./components/Menu/Menu";
 import Grid from "./components/Grid/Grid";
+import Drink from "./components/Drink/Drink";
 import { CocktailApi } from "./Api/endpoint";
 import s from "./style.module.css";
 
@@ -13,12 +14,7 @@ const App = () => {
 	// state for drink name
 	const [drinkName, setDrinkName] = useState("");
 
-	// const [visible, setVisible] = useState({
-	// https://www.geeksforgeeks.org/how-to-use-multiple-ternary-operators-in-a-single-statement-in-javascript/
-	// 	menu: true,
-	// 	grid: false,
-	// 	drink: false
-	// });
+	const [drinkDetail, setDrinkDetail] = useState("");
 
 	// function to get list of drink by category
 	async function getListCategory() {
@@ -39,10 +35,23 @@ const App = () => {
 		}
 	}
 
+	// function to get drink by id
+	async function getDrinkById(id) {
+		const data = await CocktailApi.getDrinkDetail(id);
+		console.log(data, "esto es drink");
+		if (data) {
+			setDrinkDetail(data);
+		}
+	}
+
 	useEffect(() => {
 		getListCategory();
 	}, []);
 
+	// console.log(drikCategory.length, "este es drikCategory");
+	console.log(drinkName.length, "este es drinkName");
+	console.log(drinkDetail, "este es drinkDetail");
+	// console.log(drinkName.length === 0, "es o no?");
 	return (
 		<div className={s.container_main}>
 			<div className={s.bg_intro}>
@@ -58,19 +67,33 @@ const App = () => {
 					</header>
 				</main>
 			</div>
-			{/* {drikCategory.length > 0 || drinkName.length > 0 ? ( */}
-			<section className={s.section} id="menu">
-				{drinkName ? (
-					// {drinkName.length > 0 ? (
-					<Grid drinkName={drinkName} />
-				) : (
-					<Menu drikCategory={drikCategory} />
-				)}
+
+			<section
+				className={s.section}
+				style={{
+					display: drinkName.length === 0 && !drinkDetail ? "block" : "none",
+				}}
+			>
+				<Menu drikCategory={drikCategory} getDrinkById={getDrinkById} />
+			</section>
+			<section
+				id="menu"
+				className={s.section}
+				style={{
+					display: drinkName.length > 0 && !drinkDetail ? "block" : "none",
+				}}
+			>
+				<Grid drinkName={drinkName} getDrinkById={getDrinkById} />
+			</section>
+			<section
+				className={s.section}
+				style={{ display: drinkDetail ? "block" : "none" }}
+			>
+				<Drink drinkDetail={drinkDetail} />
 			</section>
 			{/* ) : (
 				<div>Loadig ....</div>
 			)} */}
-
 			<footer></footer>
 		</div>
 	);

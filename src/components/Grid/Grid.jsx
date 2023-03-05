@@ -2,8 +2,7 @@ import GridItem from "../GridItem/GridItem";
 import DrinkNoFound from "../DrinkNoFound/DrinkNoFound";
 import s from "./style.module.css";
 
-const Grid = ({ drinkName }) => {
-	console.log(drinkName, "esto es drinkName en grid");
+const Grid = ({ drinkName, getDrinkById }) => {
 	return drinkName.length > 0 ? (
 		<div className="container-fluid py-5">
 			<div className="row justify-content-center">
@@ -14,7 +13,15 @@ const Grid = ({ drinkName }) => {
 				</div>
 				{drinkName.map((drink) => {
 					const { idDrink, strDrink, strDrinkThumb } = drink;
-					return <GridItem key={idDrink} name={strDrink} img={strDrinkThumb} />;
+					return (
+						<GridItem
+							key={idDrink}
+							name={strDrink}
+							img={strDrinkThumb}
+							id={idDrink}
+							getDrinkById={getDrinkById}
+						/>
+					);
 				})}
 			</div>
 		</div>

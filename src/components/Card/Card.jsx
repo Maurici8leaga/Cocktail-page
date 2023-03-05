@@ -3,7 +3,7 @@ import Item from "../Item/Item";
 import { CocktailApi } from "../../Api/endpoint";
 import s from "./style.module.css";
 
-const Card = ({ nameCategory }) => {
+const Card = ({ nameCategory, getDrinkById }) => {
 	const [drinkName, setDrinkName] = useState([]);
 
 	const getDrinkCateg = useMemo(() => {
@@ -24,7 +24,16 @@ const Card = ({ nameCategory }) => {
 			<div className="d-flex flex-row" style={{ overflowX: "scroll" }}>
 				{drinkName.map((drink) => {
 					const { idDrink, strDrink, strDrinkThumb } = drink;
-					return <Item key={idDrink} name={strDrink} img={strDrinkThumb} />;
+
+					return (
+						<Item
+							key={idDrink}
+							name={strDrink}
+							img={strDrinkThumb}
+							id={idDrink}
+							getDrinkById={getDrinkById}
+						/>
+					);
 				})}
 			</div>
 		</div>

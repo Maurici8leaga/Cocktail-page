@@ -46,4 +46,13 @@ export class CocktailApi {
 			console.error(error);
 		}
 	}
+
+	static async getDrinkDetail(id) {
+		try {
+			const response = await axios.get(`${BASE_URL}lookup.php?i=${id}`);
+			return response.data.drinks[0];
+		} catch (error) {
+			console.error(error);
+		}
+	}
 }

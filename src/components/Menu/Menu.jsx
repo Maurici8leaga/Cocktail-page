@@ -1,7 +1,7 @@
 import Card from "../Card/Card";
 import s from "./style.module.css";
 
-const Menu = ({ drikCategory }) => {
+const Menu = ({ drikCategory, getDrinkById }) => {
 	return (
 		<div>
 			<div className={s.container_menu}>
@@ -18,7 +18,7 @@ const Menu = ({ drikCategory }) => {
 									})`,
 								}}
 							>
-								<a
+								<div
 									className={s.subtitle_menu}
 									href="/"
 									style={{
@@ -28,10 +28,10 @@ const Menu = ({ drikCategory }) => {
 									}}
 								>
 									{`${strCategory}`}
-								</a>
+								</div>
 							</div>
 
-							<Card nameCategory={strCategory} />
+							<Card nameCategory={strCategory} getDrinkById={getDrinkById} />
 						</div>
 					);
 				})}
