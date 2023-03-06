@@ -1,7 +1,7 @@
 import { Search as Loupe } from "react-bootstrap-icons";
 import s from "./style.module.css";
 
-const SearchBar = ({ onSubmit }) => {
+const SearchBar = ({ onSubmit, setDrinkDetail }) => {
 	const submitName = (e) => {
 		e.preventDefault();
 		if (e.target.value.trim() !== "" && e.keyCode === 13) {
@@ -9,8 +9,8 @@ const SearchBar = ({ onSubmit }) => {
 			onSubmit(e.target.value);
 			// clean the input
 			e.target.value = "";
-			// redirect to the section
-			window.location.href = "#menu";
+			// set drinkDetail value to default
+			setDrinkDetail("");
 		}
 	};
 

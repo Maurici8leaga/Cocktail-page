@@ -44,14 +44,24 @@ const App = () => {
 		}
 	}
 
+	const goToSection = () => {
+		if (drinkName.length > 0) {
+			// if (drinkName.length > 0 || drinkName.length === 0) {
+			window.location.href = "#list";
+		} else if (drinkDetail) {
+			// PENDIENTE
+			window.location.href = "#drinkDetail";
+		}
+	};
+
 	useEffect(() => {
 		getListCategory();
 	}, []);
 
-	// console.log(drikCategory.length, "este es drikCategory");
-	console.log(drinkName.length, "este es drinkName");
-	console.log(drinkDetail, "este es drinkDetail");
-	// console.log(drinkName.length === 0, "es o no?");
+	goToSection();
+
+	// console.log(drinkName.length, "este es drinkName");
+	// console.log(drinkDetail, "este es length drinkDetail");
 	return (
 		<div className={s.container_main}>
 			<div className={s.bg_intro}>
@@ -63,7 +73,11 @@ const App = () => {
 							favorite cocktail and more
 						</p>
 
-						<SearchBar onSubmit={searchDrink} id="searchBar" />
+						<SearchBar
+							id="searchBar"
+							onSubmit={searchDrink}
+							setDrinkDetail={setDrinkDetail}
+						/>
 					</header>
 				</main>
 			</div>
@@ -71,21 +85,22 @@ const App = () => {
 			<section
 				className={s.section}
 				style={{
-					display: drinkName.length === 0 && !drinkDetail ? "block" : "none",
+					display: !drinkName && !drinkDetail ? "block" : "none",
 				}}
 			>
 				<Menu drikCategory={drikCategory} getDrinkById={getDrinkById} />
 			</section>
 			<section
-				id="menu"
+				id="list"
 				className={s.section}
 				style={{
-					display: drinkName.length > 0 && !drinkDetail ? "block" : "none",
+					display: drinkName && !drinkDetail ? "block" : "none",
 				}}
 			>
 				<Grid drinkName={drinkName} getDrinkById={getDrinkById} />
 			</section>
 			<section
+				i="drinkDetail"
 				className={s.section}
 				style={{ display: drinkDetail ? "block" : "none" }}
 			>
