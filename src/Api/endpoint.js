@@ -30,7 +30,6 @@ export class CocktailApi {
 	static async getDrinkByCateg(category) {
 		try {
 			const response = await axios.get(`${BASE_URL}filter.php?c=${category}`);
-			// reducing the array to only 3 of them
 			const data = response.data.drinks;
 			return data;
 		} catch (error) {

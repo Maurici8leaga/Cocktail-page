@@ -15,11 +15,16 @@
 	height: 400px;
 }
 
+.container_suggest {
+	width: 100%;
+	height: auto;
+}
+
 .name {
 	font-size: 1.75rem;
 	font-family: "Prompt", sans-serif;
-    border-top: 1px solid var(--orange);
-    border-bottom: 1px solid var(--orange);
+	border-top: 1px solid var(--green);
+	border-bottom: 1px solid var(--green);
 }
 
 .bg {
@@ -33,39 +38,20 @@
 	margin: 30px 0px;
 }
 
-.text{
-    margin: 5px;
-    padding: 5px;
+.text {
+	margin: 5px;
+	padding: 5px;
 }
 
-.title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    font-size: 1.5rem;
+.title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+	font-size: 1.5rem;
 }
 
-.properties{
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-hr.style_seven {
-    overflow: visible; /* For IE */
-    height: 30px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px 0 0 0;
-    border-radius: 20px;
-}
-hr.style_seven:before { /* Not really supposed to work, but does */
-    display: block;
-    content: "";
-    height: 30px;
-    margin-top: -31px;
-    border-style: solid;
-    border-color: black;
-    border-width: 0 0 1px 0;
-    border-radius: 20px;
+.properties {
+	font-size: 1rem;
+	font-weight: bold;
 }

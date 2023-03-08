@@ -3,6 +3,13 @@ import DrinkNoFound from "../DrinkNoFound/DrinkNoFound";
 import s from "./style.module.css";
 
 const Grid = ({ drinkName, getDrinkById }) => {
+	if (drinkName.length > 0) {
+		// this for the page load at the top
+		window.location.href = "#list";
+	}
+
+	console.log(drinkName, "drinkName en grid");
+
 	return drinkName.length > 0 ? (
 		<div className="container-fluid py-5">
 			<div className="row justify-content-center">

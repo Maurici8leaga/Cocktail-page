@@ -26,7 +26,6 @@ const App = () => {
 
 	// function to get drink by name
 	async function searchDrink(name) {
-		// console.log(name);
 		const data = await CocktailApi.getDrinkByName(name);
 		if (data) {
 			setDrinkName(data);
@@ -38,30 +37,17 @@ const App = () => {
 	// function to get drink by id
 	async function getDrinkById(id) {
 		const data = await CocktailApi.getDrinkDetail(id);
-		console.log(data, "esto es drink");
 		if (data) {
 			setDrinkDetail(data);
 		}
 	}
 
-	const goToSection = () => {
-		if (drinkName.length > 0) {
-			// if (drinkName.length > 0 || drinkName.length === 0) {
-			window.location.href = "#list";
-		} else if (drinkDetail) {
-			// PENDIENTE
-			window.location.href = "#drinkDetail";
-		}
-	};
-
 	useEffect(() => {
 		getListCategory();
 	}, []);
 
-	goToSection();
+	// console.log(drinkDetail, "existe drinkDetail");
 
-	// console.log(drinkName.length, "este es drinkName");
-	// console.log(drinkDetail, "este es length drinkDetail");
 	return (
 		<div className={s.container_main}>
 			<div className={s.bg_intro}>
@@ -100,11 +86,10 @@ const App = () => {
 				<Grid drinkName={drinkName} getDrinkById={getDrinkById} />
 			</section>
 			<section
-				i="drinkDetail"
 				className={s.section}
 				style={{ display: drinkDetail ? "block" : "none" }}
 			>
-				<Drink drinkDetail={drinkDetail} />
+				<Drink drinkDetail={drinkDetail} getDrinkById={getDrinkById} />
 			</section>
 			{/* ) : (
 				<div>Loadig ....</div>

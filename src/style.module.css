@@ -11,7 +11,7 @@
 
 .bg_intro {
 	width: 100%;
-	height: 50%;
+	height: 100%;
 
 	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 		url("./assets/images/limon-table.webp");
@@ -20,10 +20,15 @@
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
+
+	/* clip-path: circle(63.9% at 50% 23%); */
+	/* clip-path: circle(63.9% at 50% 15%); */
+	/* clip-path: circle(66.8% at 50% 28%); */
+	clip-path: circle(66.8% at 50% 6%);
 }
 
 .header {
-	padding: 180px 0 30px 0;
+	padding: 400px 0 30px 0;
 }
 
 .title {
