@@ -20,10 +20,6 @@
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
-
-	/* clip-path: circle(63.9% at 50% 23%); */
-	/* clip-path: circle(63.9% at 50% 15%); */
-	/* clip-path: circle(66.8% at 50% 28%); */
 	clip-path: circle(66.8% at 50% 6%);
 }
 

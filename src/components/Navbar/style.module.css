@@ -4,15 +4,42 @@
 	--green: #35d0ba;
 }
 
+.glass {
+	height: 100vh;
+
+	background: rgba(11, 11, 11, 0.65);
+	box-shadow: 0 8px 32px 0 rgba(76, 76, 76, 0.37);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	overflow-y: scroll;
+}
+
 .logo {
 	padding: 0px;
 	margin: 0px;
+	color: white;
+
+	text-transform: uppercase;
+}
+
+.logo2 {
+	padding: 0px;
+	margin: 0px;
+	color: var(--orange);
 
 	text-transform: uppercase;
 }
 
 .logo:hover {
-	color: var(--yellow);
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+
+.logo2:hover {
+	font-weight: bolder;
+	font-size: 1.3rem;
 }
 
 .bt_menu {
@@ -24,14 +51,31 @@
 	font-size: 1.25rem;
 }
 
+.bt_menu2 {
+	padding: 0.25rem 0.75rem;
+	background-color: transparent;
+	border: 1px solid var(--orange);
+	border-radius: 0.375rem;
+	line-height: 1;
+	font-size: 1.25rem;
+}
+
 .bt_menu:hover {
-	border: 1.5px solid var(--yellow);
+	border: 1.5px solid var(--orange);
+}
+
+.bt_menu2:hover {
+	border: 1.5px solid var(--orange);
 }
 
 .listIcon {
 	color: white;
 }
 
+.listIcon2 {
+	color: var(--orange);
+}
+
 .listIcon:hover {
-	color: var(--yellow);
+	color: var(--orange);
 }

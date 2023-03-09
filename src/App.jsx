@@ -50,8 +50,8 @@ const App = () => {
 
 	return (
 		<div className={s.container_main}>
+			<Navbar />
 			<div className={s.bg_intro}>
-				<Navbar />
 				<main className="container text-center">
 					<header className={s.header}>
 						<p className="h3 pb-4">
