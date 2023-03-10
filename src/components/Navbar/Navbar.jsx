@@ -1,7 +1,25 @@
+import { useState } from "react";
 import { List } from "react-bootstrap-icons";
 import s from "./style.module.css";
 
-const Navbar = () => {
+const Navbar = ({ onSubmit, setDrinkDetail, setDrinkName }) => {
+	// state for drink name on the navbar
+	const [nameDrink, setNameDrink] = useState("");
+
+	const submitName = (e) => {
+		e.preventDefault();
+		if (nameDrink.trim() !== "") {
+			// submit name
+			onSubmit(nameDrink);
+			// set drinkDetail value to default
+			setDrinkDetail("");
+		}
+	};
+
+	const onChange = (e) => {
+		setNameDrink(e.target.value);
+	};
+
 	// function to change the color of items when scroll
 	window.onscroll = function () {
 		var btn_menu = document.getElementById("btn_menu");
@@ -27,6 +45,12 @@ const Navbar = () => {
 			logo.classList.add(`${s.logo}`);
 			logo.classList.remove(`${s.logo2}`);
 		}
+	};
+
+	// function to back to the menu
+	const backToMenu = () => {
+		setDrinkDetail("");
+		setDrinkName("");
 	};
 
 	return (
@@ -73,10 +97,100 @@ const Navbar = () => {
 						</span>
 
 						<div className="offcanvas-body">
-							<ul className="navbar-nav flex-grow-1 pe-3">
-								<li>cosa1</li>
-								<li>cosa2</li>
-								<li>cosa3</li>
+							<form className="d-flex mt-3" role="search" onSubmit={submitName}>
+								<input
+									className="form-control me-2"
+									type="search"
+									name="search"
+									placeholder="Search for a drink by name..."
+									aria-label="Search"
+									onChange={onChange}
+								/>
+								<button
+									className="btn btn-outline-info"
+									type="submit"
+									data-bs-dismiss="offcanvas"
+								>
+									Search
+								</button>
+							</form>
+
+							<ul className="navbar-nav justify-content-end flex-grow-1 pe-3 pt-3">
+								<li className="nav-item pt-2 pb-2">
+									<a className={s.link} href="#Beer" onClick={backToMenu}>
+										Beer
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a className={s.link} href="#Cocktail" onClick={backToMenu}>
+										Cocktail
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a className={s.link} href="#Cocoa" onClick={backToMenu}>
+										Cocoa
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a
+										className={s.link}
+										href="#Coffee / Tea"
+										onClick={backToMenu}
+									>
+										Coffee & Tea
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a
+										className={s.link}
+										href="#Homemade Liqueur"
+										onClick={backToMenu}
+									>
+										Homemade Liqueur
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a
+										className={s.link}
+										href="#Ordinary Drink"
+										onClick={backToMenu}
+									>
+										Ordinary Drink
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a
+										className={s.link}
+										href="#Other / Unknown"
+										onClick={backToMenu}
+									>
+										Others
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a
+										className={s.link}
+										href="#Punch / Party Drink"
+										onClick={backToMenu}
+									>
+										Punch & Party Drink
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a className={s.link} href="#Shake" onClick={backToMenu}>
+										Shake
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a className={s.link} href="#Shot" onClick={backToMenu}>
+										Shot
+									</a>
+								</li>
+								<li className="nav-item pt-2 pb-2">
+									<a className={s.link} href="#Soft Drink" onClick={backToMenu}>
+										Soft Drink
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>

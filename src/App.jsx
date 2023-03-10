@@ -50,7 +50,12 @@ const App = () => {
 
 	return (
 		<div className={s.container_main}>
-			<Navbar />
+			<Navbar
+				onSubmit={searchDrink}
+				setDrinkDetail={setDrinkDetail}
+				setDrinkName={setDrinkName}
+			/>
+
 			<div className={s.bg_intro}>
 				<main className="container text-center">
 					<header className={s.header}>

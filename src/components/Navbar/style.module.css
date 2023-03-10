@@ -79,3 +79,16 @@
 .listIcon:hover {
 	color: var(--orange);
 }
+
+.link {
+	display: block;
+	padding: 0.5rem 0;
+	font-size: 1.5rem;
+	color: white;
+	text-decoration: none;
+}
+
+.link:hover {
+	color: var(--orange);
+	/* color: var(--green); */
+}

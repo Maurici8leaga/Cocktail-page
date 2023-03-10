@@ -19,8 +19,8 @@ const Menu = ({ drikCategory, getDrinkById }) => {
 								}}
 							>
 								<div
+									id={strCategory}
 									className={s.subtitle_menu}
-									href="/"
 									style={{
 										justifyContent: oddOrEven === 0 ? "flex-start" : "flex-end",
 										paddingLeft: oddOrEven === 0 ? 30 : 0,
