@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import Menu from "./components/Menu/Menu";
 import Grid from "./components/Grid/Grid";
 import Drink from "./components/Drink/Drink";
+import Footer from "./Footer/Footer";
 import { CocktailApi } from "./Api/endpoint";
 import s from "./style.module.css";
 
@@ -56,50 +57,55 @@ const App = () => {
 				setDrinkName={setDrinkName}
 			/>
 
-			<div className={s.bg_intro}>
-				<main className="container text-center">
-					<header className={s.header}>
-						<p className="h3 pb-4">
-							Welcome to Cocktail Pedia where you can find the recipe for your
-							favorite cocktail and more
-						</p>
+			<div className={s.container_info}>
+				<div className={s.bg_intro}>
+					<main className="container text-center">
+						<header className={s.header}>
+							<p className="h3 pb-4">
+								Welcome to Cocktail Pedia where you can find the recipe for your
+								favorite cocktail and more
+							</p>
 
-						<SearchBar
-							id="searchBar"
-							onSubmit={searchDrink}
-							setDrinkDetail={setDrinkDetail}
-						/>
-					</header>
-				</main>
+							<SearchBar
+								id="searchBar"
+								onSubmit={searchDrink}
+								setDrinkDetail={setDrinkDetail}
+							/>
+						</header>
+					</main>
+				</div>
+
+				<section
+					className={s.section}
+					style={{
+						display: !drinkName && !drinkDetail ? "block" : "none",
+					}}
+				>
+					<Menu drikCategory={drikCategory} getDrinkById={getDrinkById} />
+				</section>
+				<section
+					id="list"
+					className={s.section}
+					style={{
+						display: drinkName && !drinkDetail ? "block" : "none",
+					}}
+				>
+					<Grid drinkName={drinkName} getDrinkById={getDrinkById} />
+				</section>
+				<section
+					className={s.section}
+					style={{ display: drinkDetail ? "block" : "none" }}
+				>
+					<Drink drinkDetail={drinkDetail} getDrinkById={getDrinkById} />
+				</section>
 			</div>
 
-			<section
-				className={s.section}
-				style={{
-					display: !drinkName && !drinkDetail ? "block" : "none",
-				}}
-			>
-				<Menu drikCategory={drikCategory} getDrinkById={getDrinkById} />
-			</section>
-			<section
-				id="list"
-				className={s.section}
-				style={{
-					display: drinkName && !drinkDetail ? "block" : "none",
-				}}
-			>
-				<Grid drinkName={drinkName} getDrinkById={getDrinkById} />
-			</section>
-			<section
-				className={s.section}
-				style={{ display: drinkDetail ? "block" : "none" }}
-			>
-				<Drink drinkDetail={drinkDetail} getDrinkById={getDrinkById} />
-			</section>
 			{/* ) : (
 				<div>Loadig ....</div>
 			)} */}
-			<footer></footer>
+			<footer>
+				<Footer setDrinkDetail={setDrinkDetail} setDrinkName={setDrinkName} />
+			</footer>
 		</div>
 	);
 };
