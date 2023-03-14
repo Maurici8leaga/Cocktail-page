@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import GridItem from "../GridItem/GridItem";
+import Spinner from "../Spinner/Spinner";
 import { CocktailApi } from "../../Api/endpoint";
 import s from "./style.module.css";
 
@@ -63,7 +64,7 @@ const Drink = ({ drinkDetail, getDrinkById }) => {
 		}
 	}, [drinkDetail]);
 
-	return (
+	return drinkDetail ? (
 		<div id="drinkDetail" className={s.main_container}>
 			<div className="container">
 				<div className="d-flex flex-column ">
@@ -179,6 +180,8 @@ const Drink = ({ drinkDetail, getDrinkById }) => {
 				</div>
 			</div>
 		</div>
+	) : (
+		<Spinner />
 	);
 };
 

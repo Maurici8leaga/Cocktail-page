@@ -4,7 +4,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import Menu from "./components/Menu/Menu";
 import Grid from "./components/Grid/Grid";
 import Drink from "./components/Drink/Drink";
-import Footer from "./Footer/Footer";
+import Footer from "./components/Footer/Footer";
+import Spinner from "./components/Spinner/Spinner";
 import { CocktailApi } from "./Api/endpoint";
 import s from "./style.module.css";
 
@@ -47,9 +48,9 @@ const App = () => {
 		getListCategory();
 	}, []);
 
-	// console.log(drinkDetail, "existe drinkDetail");
+	console.log(drinkName, "esto es drinkName");
 
-	return (
+	return drikCategory.length > 0 ? (
 		<div className={s.container_main}>
 			<Navbar
 				onSubmit={searchDrink}
@@ -83,6 +84,7 @@ const App = () => {
 				>
 					<Menu drikCategory={drikCategory} getDrinkById={getDrinkById} />
 				</section>
+
 				<section
 					id="list"
 					className={s.section}
@@ -92,6 +94,7 @@ const App = () => {
 				>
 					<Grid drinkName={drinkName} getDrinkById={getDrinkById} />
 				</section>
+
 				<section
 					className={s.section}
 					style={{ display: drinkDetail ? "block" : "none" }}
@@ -100,13 +103,12 @@ const App = () => {
 				</section>
 			</div>
 
-			{/* ) : (
-				<div>Loadig ....</div>
-			)} */}
 			<footer>
 				<Footer setDrinkDetail={setDrinkDetail} setDrinkName={setDrinkName} />
 			</footer>
 		</div>
+	) : (
+		<Spinner />
 	);
 };
 

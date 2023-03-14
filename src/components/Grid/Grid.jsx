@@ -8,8 +8,6 @@ const Grid = ({ drinkName, getDrinkById }) => {
 		window.location.href = "#list";
 	}
 
-	console.log(drinkName, "drinkName en grid");
-
 	return drinkName.length > 0 ? (
 		<div className="container-fluid py-5">
 			<div className="row justify-content-center">
