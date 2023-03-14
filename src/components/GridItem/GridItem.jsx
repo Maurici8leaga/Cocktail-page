@@ -3,6 +3,16 @@ import s from "./style.module.css";
 const GridItem = (props) => {
 	const { name, img, id, getDrinkById } = props;
 
+	// function to check the length of the name
+	const lengthName = () => {
+		const shortName = name.substr(0, 21);
+		if (name.length > 21) {
+			return `${shortName}...`;
+		} else {
+			return name;
+		}
+	};
+
 	const selectDrink = () => {
 		getDrinkById(id);
 	};
@@ -29,7 +39,7 @@ const GridItem = (props) => {
 					</div>
 
 					<div className="card-body text-center">
-						<h6 className="card-title">{name}</h6>
+						<h6 className="card-title">{lengthName()}</h6>
 					</div>
 				</div>
 			</div>

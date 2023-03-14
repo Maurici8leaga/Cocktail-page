@@ -1,11 +1,13 @@
-import s from "./style.module.css";
+import { ContainerBg, Title, ButtonTryAgain } from "./StyledDrinkNoFound";
 
 const DrinkNoFound = () => (
-	<div className={s.bg}>
-		<div className={s.title}>You can try again with other keyword</div>
-		<a type="button" className="btn btn-outline-info btn-lg" href="searchBar">
-			Try again
-		</a>
+	<div>
+		<ContainerBg>
+			<Title>You can try again with other keyword</Title>
+			<ButtonTryAgain type="button" href="searchBar">
+				Try again
+			</ButtonTryAgain>
+		</ContainerBg>
 	</div>
 );
 
