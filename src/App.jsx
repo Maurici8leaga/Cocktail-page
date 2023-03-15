@@ -48,7 +48,7 @@ const App = () => {
 		getListCategory();
 	}, []);
 
-	console.log(drinkName, "esto es drinkName");
+	// console.log(drinkName, "esto es drinkName");
 
 	return drikCategory.length > 0 ? (
 		<div className={s.container_main}>

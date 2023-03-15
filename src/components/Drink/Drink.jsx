@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import GridItem from "../GridItem/GridItem";
 import Spinner from "../Spinner/Spinner";
 import { CocktailApi } from "../../Api/endpoint";
@@ -47,6 +47,7 @@ const Drink = ({ drinkDetail, getDrinkById }) => {
 	// state for drink suggested
 	const [drinkSuggest, setDrinkSuggest] = useState([]);
 
+	// useCallback to get Drinks recomendations
 	const getSuggestion = useCallback(async () => {
 		const data = await CocktailApi.getDrinkByCateg(strCategory);
 		if (data.length > 0) {
@@ -62,7 +63,23 @@ const Drink = ({ drinkDetail, getDrinkById }) => {
 			window.location.href = "#drinkDetail";
 			getSuggestion();
 		}
-	}, [drinkDetail]);
+	}, [drinkDetail, getSuggestion]);
+
+	// using memo to memoizig the array of items
+	const content = useMemo(() => {
+		return drinkSuggest.map((drink) => {
+			const { idDrink, strDrink, strDrinkThumb } = drink;
+			return (
+				<GridItem
+					key={idDrink}
+					name={strDrink}
+					img={strDrinkThumb}
+					id={idDrink}
+					getDrinkById={getDrinkById}
+				/>
+			);
+		});
+	}, [drinkSuggest, getDrinkById]);
 
 	return drinkDetail ? (
 		<div id="drinkDetail" className={s.main_container}>
@@ -163,18 +180,7 @@ const Drink = ({ drinkDetail, getDrinkById }) => {
 						</div>
 
 						<div className="row justify-content-center mt-2 mb-4">
-							{drinkSuggest.map((drink) => {
-								const { idDrink, strDrink, strDrinkThumb } = drink;
-								return (
-									<GridItem
-										key={idDrink}
-										name={strDrink}
-										img={strDrinkThumb}
-										id={idDrink}
-										getDrinkById={getDrinkById}
-									/>
-								);
-							})}
+							{content}
 						</div>
 					</div>
 				</div>

@@ -1,10 +1,6 @@
-:root {
-	--orange: #ff9233;
-	--yellow: #ffcd3c;
-	--green: #35d0ba;
-}
+import styled from "styled-components";
 
-.searchBar {
+export const InputSearchBar = styled.input`
 	width: 50%;
 	height: 30px;
 	padding: 18px 18px 18px 50px;
@@ -15,18 +11,18 @@
 	background-color: #d9d9d96e;
 	color: white;
 	border-color: transparent;
-}
 
-::placeholder {
-	color: white;
-}
+	::placeholder {
+		color: white;
+	}
+`;
 
-.loupe {
+export const LoupeIcon = styled.span`
 	position: absolute;
 	margin-left: -37px;
-	margin-top: 10px;
-}
+	margin-top: 5px;
 
-.loupe:hover {
-	color: var(--yellow);
-}
+	&:hover {
+		color: var(--yellow);
+	}
+`;

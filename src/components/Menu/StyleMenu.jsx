@@ -1,24 +1,20 @@
-:root {
-	--orange: #ff9233;
-	--yellow: #ffcd3c;
-	--green: #35d0ba;
-}
+import styled from "styled-components";
 
-.container_menu {
+export const ContainerMenu = styled.div`
 	width: 100%;
 	height: auto;
-}
+`;
 
-.img_bg {
+export const ImageBg = styled.div`
 	width: 100%;
 	height: 200px;
 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
+`;
 
-.subtitle_menu {
+export const SubtitleMenu = styled.div`
 	display: flex;
 	position: relative;
 	top: 60px;
@@ -27,4 +23,4 @@
 	font-family: "Prompt", sans-serif;
 	text-decoration: none;
 	color: white;
-}
+`;

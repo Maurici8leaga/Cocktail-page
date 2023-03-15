@@ -34,3 +34,5 @@ export const ButtonTryAgain = styled.a`
 		color: white;
 	}
 `;
+
+// https://jsramblings.com/how-to-use-media-queries-with-styled-components/

@@ -1,5 +1,5 @@
 import { Search as Loupe } from "react-bootstrap-icons";
-import s from "./style.module.css";
+import { InputSearchBar, LoupeIcon } from "./StyleSearchBar";
 
 const SearchBar = ({ onSubmit, setDrinkDetail }) => {
 	const submitName = (e) => {
@@ -16,15 +16,16 @@ const SearchBar = ({ onSubmit, setDrinkDetail }) => {
 
 	return (
 		<>
-			<input
-				className={s.searchBar}
+			<InputSearchBar
 				type="text"
 				placeholder="Search a cocktail ..."
 				name="input"
-				// onKeyUp es mejor que onChange para este caso ya que con onKeyUp puedo especificar que al hacer enter este haga submit en el input
 				onKeyUp={submitName}
 			/>
-			<Loupe className={s.loupe} />
+
+			<LoupeIcon>
+				<Loupe />
+			</LoupeIcon>
 		</>
 	);
 };

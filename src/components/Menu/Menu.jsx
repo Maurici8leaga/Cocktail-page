@@ -1,26 +1,24 @@
 import Card from "../Card/Card";
-import s from "./style.module.css";
+import { ContainerMenu, ImageBg, SubtitleMenu } from "./StyleMenu";
 
 const Menu = ({ drikCategory, getDrinkById }) => {
 	return (
-		<div>
-			<div className={s.container_menu}>
+		<>
+			<ContainerMenu>
 				{drikCategory.map((drink, i) => {
 					const { strCategory, img } = drink;
 					const oddOrEven = i % 2;
 					return (
 						<div key={`item_menu_${i}`}>
-							<div
-								className={s.img_bg}
+							<ImageBg
 								style={{
 									backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${
 										process.env.PUBLIC_URL + `/img/${img}`
 									})`,
 								}}
 							>
-								<div
+								<SubtitleMenu
 									id={strCategory}
-									className={s.subtitle_menu}
 									style={{
 										justifyContent: oddOrEven === 0 ? "flex-start" : "flex-end",
 										paddingLeft: oddOrEven === 0 ? 30 : 0,
@@ -28,15 +26,15 @@ const Menu = ({ drikCategory, getDrinkById }) => {
 									}}
 								>
 									{`${strCategory}`}
-								</div>
-							</div>
+								</SubtitleMenu>
+							</ImageBg>
 
 							<Card nameCategory={strCategory} getDrinkById={getDrinkById} />
 						</div>
 					);
 				})}
-			</div>
-		</div>
+			</ContainerMenu>
+		</>
 	);
 };
 
