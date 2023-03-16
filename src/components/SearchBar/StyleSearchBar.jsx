@@ -15,6 +15,17 @@ export const InputSearchBar = styled.input`
 	::placeholder {
 		color: white;
 	}
+
+	// mobile sizes
+	@media (min-width: 320px) and (max-width: 480px) {
+		width: 85%;
+		font-size: 18px;
+	}
+
+	// tablet sizes
+	@media (min-width: 481px) and (max-width: 778px) {
+		width: 60%;
+	}
 `;
 
 export const LoupeIcon = styled.span`

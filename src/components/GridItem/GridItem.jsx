@@ -18,7 +18,7 @@ const GridItem = (props) => {
 	};
 
 	return (
-		<div className="col col-sm-auto col-md-auto">
+		<div className={s.containerColumn}>
 			<div
 				className="card"
 				style={{

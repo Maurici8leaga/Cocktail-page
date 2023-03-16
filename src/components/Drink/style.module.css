@@ -51,7 +51,24 @@
 	font-size: 1.5rem;
 }
 
-.properties {
-	font-size: 1rem;
-	font-weight: bold;
+/* media querys */
+
+/* mobile sizes */
+@media (min-width: 320px) and (max-width: 480px) {
+	.container_img {
+		width: 300px;
+		height: 300px;
+	}
+
+	.title {
+		font-size: 1.25rem;
+	}
+}
+
+/* tablet sizes */
+@media (min-width: 481px) and (max-width: 778px) {
+	.container_img {
+		width: 350px;
+		height: 350px;
+	}
 }

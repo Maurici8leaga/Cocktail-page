@@ -3,10 +3,8 @@ import DrinkNoFound from "../DrinkNoFound/DrinkNoFound";
 import s from "./style.module.css";
 
 const Grid = ({ drinkName, getDrinkById }) => {
-	if (drinkName.length > 0) {
-		// this for the page load at the top
-		window.location.href = "#list";
-	}
+	// this for the page load at the top
+	window.location.href = "#list";
 
 	return drinkName.length > 0 ? (
 		<div className="container-fluid py-5">

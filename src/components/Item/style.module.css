@@ -3,3 +3,19 @@
 	height: auto;
 	margin-bottom: 0px;
 }
+
+/* mediaa querys */
+
+/* mobile sizes */
+@media (min-width: 320px) and (max-width: 480px) {
+	.container_img {
+		width: 130px;
+	}
+}
+
+/* tablet sizes */
+@media (min-width: 481px) and (max-width: 778px) {
+	.container_img {
+		width: 170px;
+	}
+}

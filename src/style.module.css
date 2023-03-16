@@ -43,3 +43,27 @@ section {
 	width: 100%;
 	height: 100%;
 }
+
+/* media querys */
+
+/* mobile sizes */
+@media (min-width: 320px) and (max-width: 480px) {
+	.bg_intro {
+		clip-path: circle(68% at 50% 27%);
+	}
+
+	.header {
+		padding: 300px 0 30px 0;
+	}
+}
+
+/* tablet sizes */
+@media (min-width: 481px) and (max-width: 778px) {
+	.bg_intro {
+		clip-path: circle(72.9% at 50% 25%);
+	}
+
+	.header {
+		padding: 350px 0 30px 0;
+	}
+}

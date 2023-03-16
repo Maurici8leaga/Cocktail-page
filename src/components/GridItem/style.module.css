@@ -1,3 +1,8 @@
+.containerColumn {
+	flex: 0 0 auto;
+	width: auto;
+}
+
 .container_card {
 	position: relative;
 }
@@ -37,4 +42,28 @@
 	color: black;
 	font-size: 16px;
 	cursor: pointer;
+}
+
+/* mediaa querys */
+
+/* mobile sizes */
+@media (min-width: 320px) and (max-width: 480px) {
+	.container_img {
+		width: 200px;
+	}
+
+	.text_overlay {
+		font-size: 15px;
+	}
+}
+
+/* tablet sizes */
+@media (min-width: 481px) and (max-width: 778px) {
+	.container_img {
+		width: 220px;
+	}
+
+	.text_overlay {
+		font-size: 15px;
+	}
 }

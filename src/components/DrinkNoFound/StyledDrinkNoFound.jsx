@@ -15,6 +15,16 @@ export const ContainerBg = styled.div`
 export const Title = styled.p`
 	margin-bottom: 25px;
 	font-size: 25px;
+
+	// mobile sizes
+	@media (min-width: 320px) and (max-width: 480px) {
+		font-size: 18px;
+	}
+
+	// tablet sizes
+	@media (min-width: 481px) and (max-width: 778px) {
+		font-size: 22px;
+	}
 `;
 
 export const ButtonTryAgain = styled.a`
@@ -33,6 +43,9 @@ export const ButtonTryAgain = styled.a`
 		background-color: var(--green);
 		color: white;
 	}
-`;
 
-// https://jsramblings.com/how-to-use-media-queries-with-styled-components/
+	// mobile sizes
+	@media (min-width: 320px) and (max-width: 480px) {
+		font-size: 1rem;
+	}
+`;

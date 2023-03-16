@@ -7,6 +7,16 @@ const Item = (props) => {
 		getDrinkById(id);
 	};
 
+	// function to check the length of the name
+	const lengthName = () => {
+		const shortName = name.substr(0, 21);
+		if (name.length > 21) {
+			return `${shortName}...`;
+		} else {
+			return name;
+		}
+	};
+
 	return (
 		<div onClick={selectDrink}>
 			<div
@@ -22,7 +32,7 @@ const Item = (props) => {
 					<img src={img} className="card-img-top" alt={`${name} img`} />
 				</figure>
 				<div className="card-body text-center">
-					<h5 className="card-title">{name}</h5>
+					<h5 className="card-title">{lengthName()}</h5>
 				</div>
 			</div>
 		</div>

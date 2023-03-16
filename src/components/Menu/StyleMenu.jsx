@@ -23,4 +23,14 @@ export const SubtitleMenu = styled.div`
 	font-family: "Prompt", sans-serif;
 	text-decoration: none;
 	color: white;
+
+	// mobile sizes
+	@media (min-width: 320px) and (max-width: 480px) {
+		font-size: 40px;
+	}
+
+	// tablet sizes
+	@media (min-width: 481px) and (max-width: 778px) {
+		font-size: 50px;
+	}
 `;
