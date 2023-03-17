@@ -1,6 +1,7 @@
 {
 	"name": "cocktail",
 	"version": "0.1.0",
+	"homepage": "https://maurici8leaga.github.io/Cocktail-page",
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
@@ -15,6 +16,8 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"build": "webpack --mode production",
 		"dev-server": "webpack serve",
 		"test": "react-scripts test",
@@ -43,6 +46,7 @@
 		"css-loader": "6.7.3",
 		"css-minimizer-webpack-plugin": "4.2.2",
 		"file-loader": "6.2.0",
+		"gh-pages": "5.0.0",
 		"html-loader": "4.2.0",
 		"image-webpack-loader": "8.1.0",
 		"style-loader": "3.3.1",
