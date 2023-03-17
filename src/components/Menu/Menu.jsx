@@ -13,7 +13,7 @@ const Menu = ({ drikCategory, getDrinkById }) => {
 							<ImageBg
 								style={{
 									backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${
-										process.env.PUBLIC_URL + `/img/${img}`
+										process.env.PUBLIC_URL + `/assets/img-menu/${img}`
 									})`,
 								}}
 							>
