@@ -16,6 +16,7 @@ const App = () => {
 	// state for drink name
 	const [drinkName, setDrinkName] = useState("");
 
+	// state for drink details
 	const [drinkDetail, setDrinkDetail] = useState("");
 
 	// function to get list of drink by category
@@ -47,8 +48,6 @@ const App = () => {
 	useEffect(() => {
 		getListCategory();
 	}, []);
-
-	// console.log(drinkName, "esto es drinkName");
 
 	return drikCategory.length > 0 ? (
 		<div className={s.container_main}>

@@ -1,3 +1,4 @@
+// this is a arrays of names of images with categories names
 const img_bg_menu = [
 	{ img: "beers.webp" },
 	{ img: "cocktails.webp" },

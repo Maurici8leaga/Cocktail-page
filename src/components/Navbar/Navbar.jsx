@@ -6,6 +6,7 @@ const Navbar = ({ onSubmit, setDrinkDetail, setDrinkName }) => {
 	// state for drink name on the navbar
 	const [nameDrink, setNameDrink] = useState("");
 
+	// functio to send the data
 	const submitName = (e) => {
 		e.preventDefault();
 		if (nameDrink.trim() !== "") {

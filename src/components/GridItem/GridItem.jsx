@@ -13,6 +13,7 @@ const GridItem = (props) => {
 		}
 	};
 
+	// function to select a drink and get the id
 	const selectDrink = () => {
 		getDrinkById(id);
 	};

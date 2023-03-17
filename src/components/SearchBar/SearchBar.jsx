@@ -2,6 +2,7 @@ import { Search as Loupe } from "react-bootstrap-icons";
 import { InputSearchBar, LoupeIcon } from "./StyleSearchBar";
 
 const SearchBar = ({ onSubmit, setDrinkDetail }) => {
+	// function to send the dara
 	const submitName = (e) => {
 		e.preventDefault();
 		if (e.target.value.trim() !== "" && e.keyCode === 13) {

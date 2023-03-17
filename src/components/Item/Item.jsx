@@ -3,6 +3,7 @@ import s from "./style.module.css";
 const Item = (props) => {
 	const { name, img, id, getDrinkById } = props;
 
+	// function to select a drink and get the id
 	const selectDrink = () => {
 		getDrinkById(id);
 	};

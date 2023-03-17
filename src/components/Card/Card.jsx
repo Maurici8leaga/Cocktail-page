@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Item from "../Item/Item";
 import { CocktailApi } from "../../Api/endpoint";
-// import s from "./style.module.css";
 
 const Card = ({ nameCategory, getDrinkById }) => {
+	// state for drink names
 	const [drinkName, setDrinkName] = useState([]);
 
+	// function to get drik by categories
 	const getDrinkCateg = useCallback(async () => {
 		const data = await CocktailApi.getDrinkByCateg(nameCategory);
 		if (data.length > 0) {
