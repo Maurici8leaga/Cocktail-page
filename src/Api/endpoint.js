@@ -1,6 +1,5 @@
 import axios from "axios";
 import { LIST_CATEGORY_URL, BASE_URL } from "../../src/config";
-import { img_bg_menu } from "../Api/data";
 
 export class CocktailApi {
 	// get a list of drink by category
@@ -18,12 +17,7 @@ export class CocktailApi {
 				return 0;
 			});
 
-			// adding up images to the array of api data
-			const data = arrCategory.map((ctg, i) => {
-				return { ...ctg, img: img_bg_menu[i].img };
-			});
-
-			return data;
+			return arrCategory;
 		} catch (error) {
 			console.error(error);
 		}
