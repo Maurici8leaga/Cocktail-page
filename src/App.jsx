@@ -7,6 +7,7 @@ import Drink from "./components/Drink/Drink";
 import Footer from "./components/Footer/Footer";
 import Spinner from "./components/Spinner/Spinner";
 import { CocktailApi } from "./Api/endpoint";
+import limonTable from "./assets/images/limon-table.webp";
 import s from "./style.module.css";
 
 const App = () => {
@@ -58,7 +59,12 @@ const App = () => {
 			/>
 
 			<div className={s.container_info}>
-				<div className={s.bg_intro}>
+				<div
+					className={s.bg_intro}
+					style={{
+						backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${limonTable})`,
+					}}
+				>
 					<main className="container text-center">
 						<header className={s.header}>
 							<p className="h3 pb-4">
